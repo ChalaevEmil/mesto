@@ -1,16 +1,8 @@
 .card__info{
     display: flex;
-<<<<<<< HEAD
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
     padding: 25px 18px 25px 22px;
     flex-wrap: nowrap;
 }
-=======
-    padding: 25px 21px;
-    justify-content: space-between;
-    align-items: baseline;
-    margin: 21px;
-}
->>>>>>> 29ff078e99ea2117055cf9e5ec16ef9b1e220388
