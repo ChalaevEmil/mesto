@@ -4,4 +4,7 @@
     background-color: #FFFFFF;
     color: #000000;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }

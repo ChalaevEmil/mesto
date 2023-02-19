@@ -1,9 +1,9 @@
 .page{
-    max-width:calc(100% - 31.25%);
+    max-width: 880px;
     background-color: #000000;
     color: #FFFFFF;
     margin: 0 auto;
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', sans-serif;;
 }
 
 @media screen and (max-width:1279px) {
