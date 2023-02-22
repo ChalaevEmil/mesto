@@ -19,8 +19,8 @@ function popupClosed(){
 
 popupCloseButton.addEventListener('click', popupClosed);
 
-nameInput.value = "Жак-Ив Кусто";
-professionInput.value = "Исследователь океана";
+nameInput.value = profileName.textContent;
+professionInput.value = profileProfession.textContent;
 
 function handleFormSubmit (evt) {
     evt.preventDefault(); 
