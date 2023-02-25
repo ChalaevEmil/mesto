@@ -9,6 +9,8 @@ const popupSubmit = document.querySelector(`.popup__form`);
 
 function popupOpened(){
     editPopup.classList.add(`popup_opened`);
+    nameInput.value = profileName.textContent;
+    professionInput.value = profileProfession.textContent;
 };
 
 profileEditButton.addEventListener(`click`, popupOpened);
@@ -18,9 +20,6 @@ function popupClosed(){
 };
 
 popupCloseButton.addEventListener('click', popupClosed);
-
-nameInput.value = profileName.textContent;
-professionInput.value = profileProfession.textContent;
 
 function handleFormSubmit (evt) {
     evt.preventDefault(); 
