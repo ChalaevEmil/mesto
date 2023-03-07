@@ -22,59 +22,29 @@
         </section>
 
         <section class="elements">
-          <div class="card">
-            <img class="card__image" src="./images/card__image/card__image-1.jpg" alt="Фото 1">
-            <div class="card__info">
-              <h2 class="card__title">Причал</h2>
-              <button class="card__like-button" type="button" title="Нравится"></button>
+
+          <template id="cardTempale">
+            <div class="card">
+              <img class="card__image" alt="Фото">
+              <div class="card__info">
+                <h2 class="card__title"></h2>
+                <button class="card__like-button" type="button" title="Нравится"></button>
+              </div>
+              <button class="card__delete-button" aria-label="Удалить."></button>
             </div>
-          </div>
-          <div class="card">
-            <img class="card__image" src="./images/card__image/card__image-2.jpg" alt="Фото 2">
-            <div class="card__info">
-              <h2 class="card__title">Водопад</h2>
-              <button class="card__like-button" type="button" title="Нравится"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card__image" src="./images/card__image/card__image-3.jpg" alt="Фото 3">
-            <div class="card__info">
-              <h2 class="card__title">Лёд озера Байкал</h2>
-              <button class="card__like-button" type="button" title="Нравится"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card__image" src="./images/card__image/card__image-4.jpg" alt="Фото 4">
-            <div class="card__info">
-              <h2 class="card__title">Каньон</h2>
-              <button class="card__like-button" type="button" title="Нравится"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card__image" src="./images/card__image/card__image-5.jpg" alt="Фото 5">
-            <div class="card__info">
-              <h2 class="card__title">Завораживающая глубина</h2>
-              <button class="card__like-button" type="button" title="Нравится"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card__image" src="./images/card__image/card__image-6.jpg" alt="Фото 6">
-            <div class="card__info">
-              <h2 class="card__title">Где-то у костра</h2>
-              <button class="card__like-button" type="button" title="Нравится"></button>
-            </div>
-          </div>
+          </template>
+          
         </section>
       </main>
       <footer class="footer">
         <p class="footer__author">&copy; 2023 Чалаев Эмиль</p>
       </footer>
 
-      <div class="popup">
+      <div class="popup popup_type_profile">
         <div class="popup__container">
             <button type="button" class="popup__close" aria-label="Закрыть форму"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" name="form">
+            <form class="popup__form popup__form-profile" name="form">
               <div class="popup__input-container">
                 <input class="popup__input popup__input_el_name" type="text" name="name">
                 <input class="popup__input popup__input_el_profession" type="text" name="profession">
@@ -83,6 +53,29 @@
             </form>
         </div>
       </div>
+
+      <div class="popup popup_type_card">
+        <div class="popup__container">
+            <button type="button" class="popup__close" aria-label="Закрыть форму"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form popup__form-card" name="form-card">
+              <div class="popup__input-container">
+                <input class="popup__input popup__input_el_image-name" type="text" name="input-name" placeholder="Название" value="">
+                <input class="popup__input popup__input_el_image-url" type="url" name="input-url" placeholder="Ссылка на картинку" value="">
+              </div>
+              <button type="submit" class="popup__submit" aria-label="Создать">Создать</button>
+            </form>
+        </div>
+      </div>
+      
+      <div class="popup popup_type_image">
+        <div class="popup__image-container">
+          <img class="popup__image" alt="#" src="#">
+          <h3 class="popup__description"></h3>
+          <button type="button" class="popup__close"></button>
+        </div>
+      </div>
+
       <script src="scripts/index.js"></script>
   </body>
 </html>
