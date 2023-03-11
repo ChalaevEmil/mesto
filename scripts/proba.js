@@ -61,7 +61,7 @@ const initialCards = [
     popupCloseButton.forEach(item => {
         item.addEventListener(`click`, function(){
         const popup = item.closest (`.popup`);
-        popupClosed(popup);
+        popupClosed(popup) 
         })
     });
       
@@ -72,8 +72,8 @@ const initialCards = [
 profileEditButton.addEventListener(`click`, popupEditProfileOpened);
 
 /*функция поведения попапа редактирования профиля при нажатии кнопки*/
-function handleProfileFormSubmit (evt){
-    evt.preventDefault();
+function handleProfileFormSubmit (evt) {
+    evt.preventDefault(); 
     profileName.textContent = profileNameInput.value;
     profileProfession.textContent = profileProfessionInput.value;
     popupClosed(popupEditProfile);
@@ -88,8 +88,8 @@ cardAddButton.addEventListener(`click`, () => {
 });
 
 /*функция поведения добавления карты при нажатии кнопки*/
-function handleAddCardFormSubmit (event){
-    event.preventDefault();
+function handleAddCardFormSubmit (event) {
+    event.preventDefault(); 
     const name = document.querySelector(`.popup__input_el_image-name`).value;
     const link = document.querySelector(`.popup__input_el_image-url`).value;
     const card = {name, link};
@@ -98,15 +98,15 @@ function handleAddCardFormSubmit (event){
 };
 
 /*функция создания карточки*/
-function createCard(card){
-    const cardElement = cardTempale.querySelector(`.card`).cloneNode(true);
+function createCard(card) {
+    const cardElement = cardTempale.querySelector(".card").cloneNode(true);
     const cardDeleteButton = cardElement.querySelector(`.card__delete-button`);
     const likeCard = cardElement.querySelector(`.card__like-button`);
     const cardImage = cardElement.querySelector(`.card__image`);
     const cardName = cardElement.querySelector(`.card__title`);
     cardName.textContent = card.name;
-    cardImage.setAttribute(`src`, card.link);
-    cardImage.setAttribute(`alt`, card.name);
+    cardImage.setAttribute('src', card.link);
+    cardImage.setAttribute('alt', card.name);
     /*попап увеличения*/
     cardImage.addEventListener(`click`, function(){
         popupDescription.textContent = card.name;
