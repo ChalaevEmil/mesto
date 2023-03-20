@@ -1,6 +1,6 @@
 const profileEditButton = document.querySelector(`.profile__edit-button`);/*переменная кнопки редактирования профиля*/
 const buttonsClosePopup = document.querySelectorAll(`.popup__close`);/*перемееная кнопки закрытия попапа*/
-const popup = document.querySelector (`.popup`);/*переменная общего попапа*/
+const popupOverlay = document.querySelectorAll(`.popup`);/*переменная общего попапа*/
 const popupEditProfile = document.querySelector(`.popup_type_profile`);/*переменная попапа редактирования профиля*/
 const profileNameInput = document.querySelector(`.popup__input_el_name`);/*переменная поля ввода имени пользователя*/
 const profileProfessionInput = document.querySelector(`.popup__input_el_profession`);/*переменная поля ввода профессии пользователя*/
@@ -48,7 +48,26 @@ const initialCards = [
   /*функция открытия попапов*/
   function openPopup (item) {
     item.classList.add(`popup_opened`);
+    document.addEventListener(`keydown`, (evt) => {
+      if (evt.key === `Escape`) {
+        closePopupEsc(item);
+      }
+    });
    };
+
+   /*функция закрытия попапов по нажатию Escape*/
+   const closePopupEsc = (item) => {
+    if (item.classList.contains(`popup_opened`)) {
+      closePopup(item);
+    }
+  };
+
+  /*закрытие попапа кликом на овэрлэй*/
+  popupOverlay.forEach((area) => {
+    area.addEventListener(`click`, (evt) => {
+      closePopup(evt.target);
+    });
+  });
 
    /*функция открытия попапа редактирования профиля*/
    function openEditProfileForm(){
@@ -148,4 +167,4 @@ function createCard(card){
       link:cardUrlInput.value,
     });
     popupAddCardForm.reset();
-  }
+  };

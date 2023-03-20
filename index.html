@@ -46,8 +46,10 @@
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form popup__form-profile" name="form">
               <div class="popup__input-container">
-                <input class="popup__input popup__input_el_name" type="text" name="name" placeholder="Имя">
-                <input class="popup__input popup__input_el_profession" type="text" name="profession" placeholder="Вид деятельности">
+                <input id="input-profile-name" class="popup__input popup__input_el_name" type="text" name="name" placeholder="Имя" minlength="2" maxlength="40" required>
+                <span class="input-profile-name-error">Необходимо заполнить данное поле</span>
+                <input id="input-profile-profession" class="popup__input popup__input_el_profession" type="text" name="profession" placeholder="Вид деятельности" minlength="2" maxlength="200" required>
+                <span class="input-profile-profession-error">Необходимо заполнить данное поле</span>
               </div>
               <button type="submit" class="popup__submit" aria-label="Сохранить">Сохранить</button>
             </form>
@@ -60,8 +62,10 @@
             <h2 class="popup__title">Новое место</h2>
             <form class="popup__form popup__form-card" name="form-card">
               <div class="popup__input-container">
-                <input class="popup__input popup__input_el_image-name" type="text" name="input-name" placeholder="Название" value="">
-                <input class="popup__input popup__input_el_image-url" type="url" name="input-url" placeholder="Ссылка на картинку" value="">
+                <input id="input-card-name" class="popup__input popup__input_el_image-name" type="text" name="input-name" placeholder="Название" value="" minlength="2" maxlength="30" required>
+                <span class="input-card-name-error">Необходимо заполнить данное поле</span>
+                <input id="input-card-url" class="popup__input popup__input_el_image-url" type="url" name="input-url" placeholder="Ссылка на картинку" value="" required>
+                <span class="input-card-url-error">Необходимо заполнить данное поле</span>
               </div>
               <button type="submit" class="popup__submit" aria-label="Создать">Создать</button>
             </form>
@@ -76,5 +80,6 @@
         </div>
       </div>
       <script src="scripts/index.js"></script>
+      <script src="scripts/validation.js"></script>
   </body>
 </html>
