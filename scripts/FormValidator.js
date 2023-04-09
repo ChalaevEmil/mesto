@@ -41,7 +41,7 @@ const config = {
     _setEventListeners() {
       this._toggleButtonStatus();
   
-      this._formElement.addEventListener(`reset`, this._toggleButtonStatus()
+      this._formElement.addEventListener(this.resetValidation(), this._toggleButtonStatus()
       );
   
       this._inputList.forEach((input) => {

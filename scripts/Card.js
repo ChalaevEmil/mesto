@@ -1,3 +1,5 @@
+import{popupBigImage, openPopup, popupImage, popupDescription} from './index.js'
+
 export class Card {
     constructor(card, templateSelector){
         this._name = card.name;
@@ -56,5 +58,3 @@ export class Card {
         });
     }
 }
-
-import{popupBigImage, openPopup, popupImage, popupDescription} from './index.js'

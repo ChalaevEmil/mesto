@@ -107,9 +107,14 @@ cardAddButton.addEventListener(`click`, () => {
   openPopup(popupAddCard);
 });
 
-function renderCard(item) {
+function createCard(item){
   const card = new Card (item, '#cardTempale');
   const cardElement = card.createCard();
+  return cardElement
+}
+
+function renderCard(item) {
+  const cardElement = createCard(item);
   sectionElements.prepend(cardElement);
 }
 
@@ -125,9 +130,8 @@ function addNewCard(evt) {
     name: cardNameInput.value,
     link: cardUrlInput.value,
   });
-  addCardSubmitButton.classList.add(`popup__submit_disabled`);
-  addCardSubmitButton.setAttribute(`disabled`, ``);
   popupAddCardForm.reset();
+  cardFormValidation.resetValidation();
 }
 
 const cardFormValidation = new FormValidator(config, popupAddCardForm);
