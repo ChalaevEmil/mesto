@@ -1,5 +1,5 @@
-import { Card } from "./scripts/Card.js";
-import { FormValidator, config } from "./scripts/FormValidator.js";
+import { Card } from "./components/Card.js";
+import { FormValidator, config } from "./components/FormValidator.js";
 import {
   profileEditButton,
   popupAddCardForm,
@@ -8,11 +8,11 @@ import {
   profileNameInput,
   profileProfessionInput,
   initialCards,
-} from "./scripts/constants.js";
-import { Section } from "./scripts/Section.js";
-import { PopupWithImage } from "./scripts/PopupWithImage.js";
-import { PopupWithForm } from "./scripts/PopupWithForm.js";
-import { UserInfo } from "./scripts/UserInfo.js";
+} from "./components/constants.js";
+import { Section } from "./components/Section.js";
+import { PopupWithImage } from "./components/PopupWithImage.js";
+import { PopupWithForm } from "./components/PopupWithForm.js";
+import { UserInfo } from "./components/UserInfo.js";
 import './pages/index.css';
 
 function createCard(item) {
