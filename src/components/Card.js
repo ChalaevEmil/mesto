@@ -34,7 +34,8 @@ export class Card {
   }
 
   _removeCard() {
-    this._cardDeleteButton.closest(`.card`).remove();
+    this._element.remove();
+    this._element = null;
   }
 
   _setEventListeners() {
