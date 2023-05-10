@@ -12,15 +12,19 @@ class PopupWithConfirm extends Popup {
     this._card = cardId;
   }
 
-  close() {
-    super.close();
-  }
-
   setEventListeners() {
     super.setEventListeners();
     this._buttonElement.addEventListener("mousedown", () => {
       this._apiCallBacks(this._card);
     });
+  }
+
+  loadingConfirm(isLoading, content) {
+    if (isLoading) {
+      this._buttonElement.textContent = `Сохранение...`;
+    } else {
+      this._buttonElement.textContent = content;
+    }
   }
 }
 

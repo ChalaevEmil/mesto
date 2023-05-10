@@ -1,5 +1,5 @@
-import { Card } from "./components/Card.js";
-import { FormValidator, config } from "./components/FormValidator.js";
+import { Card } from "../components/Card.js";
+import { FormValidator, config } from "../components/FormValidator.js";
 import {
   profileEditButton,
   popupAddCardForm,
@@ -9,14 +9,14 @@ import {
   profileProfessionInput,
   formAvatar,
   profileAvatar,
-} from "./utils/constants.js";
-import { Section } from "./components/Section.js";
-import { PopupWithImage } from "./components/PopupWithImage.js";
-import { PopupWithForm } from "./components/PopupWithForm.js";
-import { UserInfo } from "./components/UserInfo.js";
-import { PopupWithConfirm } from "./components/PopupWithConfirm.js";
-import { Api, token } from "./components/Api.js";
-import "./pages/index.css";
+} from "../utils/constants.js";
+import { Section } from "../components/Section.js";
+import { PopupWithImage } from "../components/PopupWithImage.js";
+import { PopupWithForm } from "../components/PopupWithForm.js";
+import { UserInfo } from "../components/UserInfo.js";
+import { PopupWithConfirm } from "../components/PopupWithConfirm.js";
+import { Api, token } from "../components/Api.js";
+import "./index.css";
 
 const api = new Api(token);
 
@@ -37,10 +37,16 @@ function createCard(item) {
         if (!card.isButtomLiked()) {
           api.setCardLike(thisCardId).then((res) => {
             card.like(res.likes.length);
+          })
+          .catch((err) => {
+            console.log(err);
           });
         } else {
           api.deleteCardLike(thisCardId).then((res) => {
             card.like(res.likes.length);
+          })
+          .catch((err) => {
+            console.log(err);
           });
         }
       },
@@ -165,6 +171,7 @@ popupEditAvatar.setEventListeners();
 
 profileAvatar.addEventListener(`click`, () => {
   popupEditAvatar.open();
+  avatarFormValidation.resetValidation()
 });
 
 const cardFormValidation = new FormValidator(config, popupAddCardForm);
