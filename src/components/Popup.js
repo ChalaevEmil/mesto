@@ -29,4 +29,12 @@ export class Popup {
       }
     });
   }
+
+  loadingConfirm(isLoading, content) {
+    if (isLoading) {
+      this._buttonElement.textContent = `Сохранение...`;
+    } else {
+      this._buttonElement.textContent = content;
+    }
+  }
 }

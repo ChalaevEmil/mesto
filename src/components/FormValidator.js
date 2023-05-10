@@ -43,10 +43,11 @@ class FormValidator {
 
   _setEventListeners() {
     this._toggleButtonStatus();
-    this._formElement.addEventListener(
-      this.resetValidation(),
-      this._toggleButtonStatus()
-    );
+    this._formElement.addEventListener(this.resetValidation(), () => {
+      setTimeout(() => {
+        this._toggleButtonStatus();
+      }, 0);
+    });
     this._inputList.forEach((input) => {
       input.addEventListener(`input`, () => {
         this._isValid(input);

@@ -5,10 +5,10 @@ export class Section {
     this._sectionElements = document.querySelector(sectionElements);
   }
 
-  renderItems() {
-    this._items.forEach((item) => {
-      this._renderer(item);
-    });
+  renderItems(items) {
+    for (let i = items.length - 1; i > -1; i--) {
+      this._renderer(items[i]);
+    }
   }
 
   addItem(element) {
